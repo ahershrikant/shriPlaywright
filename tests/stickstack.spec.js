@@ -6,6 +6,8 @@ test('stick stack test', async ({ page }) => {
 
   await tournamentPage.goto();
   await tournamentPage.searchTournament('Exhibition Tournament 2026');
-  await tournamentPage.selectTournament('Exhibition Tournament 2026');
+  await tournamentPage.clickTournament('Exhibition Tournament 2026');
   await tournamentPage.waitForTournamentResponse('TOUR001');
+   
+
 });

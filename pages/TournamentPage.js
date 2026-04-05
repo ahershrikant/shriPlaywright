@@ -11,7 +11,7 @@ class TournamentPage {
     await this.page.getByPlaceholder('🔍 Search tournaments by name...').fill(name);
   }
 
-  async selectTournament(name) {
+  async clickTournament(name) {
     await this.page.getByText(name).click();
   }
 
