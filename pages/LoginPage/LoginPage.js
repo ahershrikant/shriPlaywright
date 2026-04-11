@@ -1,4 +1,4 @@
-const { getProperty } = require('../utils/configReader');
+const { getProperty } = require('../../utils/configReader');
 
 class LoginPage {
   constructor(page) {
