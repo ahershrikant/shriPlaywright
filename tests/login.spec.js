@@ -1,11 +1,9 @@
-import{test, expect} from '@playwright/test';
-import { asyncWrapProviders } from 'node:async_hooks';
+// tests/login.spec.js
+const { test } = require('@playwright/test');
+const { LoginPage } = require('../pages/LoginPage');
 
-test('login test', async ({page}) => {
-    await page.goto('https://www.saucedemo.com/');
-await page.getByPlaceholder('Username').fill('standard_user');
-await page.getByPlaceholder('Password').fill('secret_sauce');
-await page.getByRole('button', { name: 'Login' }).click();
-
-    
+test('login test using properties file', async ({ page }) => {
+  const loginPage = new LoginPage(page);
+  await page.goto('https://www.saucedemo.com/');
+  await loginPage.login('standard_user', 'secret_sauce');
 });

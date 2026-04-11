@@ -2,12 +2,12 @@
   "name": "shriplaywright",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "scripts": {
+    "test": "npx playwright test"
+  },
   "dependencies": {
-    "playwright": "^1.59.1"
+    "playwright": "^1.59.1",
+    "properties-reader": "^3.0.1"
   },
   "devDependencies": {
     "@playwright/test": "^1.59.1",
