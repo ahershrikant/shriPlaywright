@@ -1,14 +1,11 @@
-const {getProperty} = require('../../utils/configReader');
+const { getProperty } = require('../../utils/configReader');
+const { expect } = require('@playwright/test');
 
 class HomePage {
-    constructor(page) {
-        this.page = page;
-        this.homePageTitle = getProperty('homePageTitle');
-    }
-
-    async verifyHomePageTitle() {
-    await expect(this.page.locator('.inventory_item')).toHaveCount(6);
-    await expect(this.page.locator('.inventory_item_name')).toHaveText([
+  static async verifyHomePageTitle(page) {
+    const homePageTitle = getProperty('homePageTitle');
+    await expect(page.locator('.inventory_item')).toHaveCount(6);
+    await expect(page.locator('.inventory_item_name')).toHaveText([
       'Sauce Labs Backpack',
       'Sauce Labs Bike Light',
       'Sauce Labs Bolt T-Shirt',
@@ -16,7 +13,7 @@ class HomePage {
       'Sauce Labs Onesie',
       'Test.allTheThings() T-Shirt (Red)',
     ]);
-    await expect(this.page.locator('.inventory_item_price')).toHaveText([
+    await expect(page.locator('.inventory_item_price')).toHaveText([
       '$29.99',
       '$9.99',
       '$15.99',
@@ -24,4 +21,7 @@ class HomePage {
       '$7.99',
       '$15.99',
     ]);
-}}
+  }
+}
+
+module.exports = { HomePage };
