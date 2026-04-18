@@ -16,8 +16,7 @@ test.describe.serial('Login Tests - Sequential', () => {
   test('login test using properties file', async () => {
     await LoginPage.login(page, 'standard_user', 'secret_sauce');
     await LoginPage.verfyLoginSuccess(page);
-    await HomePage.verifyHomePageTitle(page);
-  });
+    await HomePage.verifyHomePageTitle(page);  });
 
   // test('login test using properties file with valid userName', async () => {
   //   await loginPage.login('standard_user', '');
