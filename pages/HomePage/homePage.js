@@ -3,7 +3,6 @@ const { expect } = require('@playwright/test');
 
 class HomePage {
   static async verifyHomePageTitle(page) {
-    const homePageTitle = getProperty('homePageTitle');
     await expect(page.locator('.inventory_item')).toHaveCount(6);
     await expect(page.locator('.inventory_item_name')).toHaveText([
       'Sauce Labs Backpack',

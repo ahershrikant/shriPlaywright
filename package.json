@@ -3,7 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test"
+    "test": "npx playwright test",
+    "test:allure": "npx playwright test && npm run allure:serve",
+    "test:headed": "npx playwright test --headed",
+    "test:debug": "npx playwright test --debug",
+    "test:report": "npm run allure:serve",
+    "test:chrome": "npx playwright test --project=chromium",
+    "test:clean": "rmdir /s /q allure-results 2>nul || echo. && rmdir /s /q allure-report 2>nul || echo. && rmdir /s /q playwright-report 2>nul || echo.",
+    "allure:serve": "npx allure serve allure-results"
   },
   "dependencies": {
     "playwright": "^1.59.1",
@@ -11,6 +18,8 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.59.1",
-    "@types/node": "^25.5.2"
+    "@types/node": "^25.5.2",
+    "allure": "^3.6.0",
+    "allure-playwright": "^3.7.1"
   }
 }
